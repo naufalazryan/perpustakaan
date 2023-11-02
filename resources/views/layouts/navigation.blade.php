@@ -50,9 +50,10 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
-                            {{ __('Profile') }}
+                        <x-dropdown-link :href="route('profile.edit', ['profile' => auth()->user()->id])">
+                            Edit Profile
                         </x-dropdown-link>
+                        
 
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
@@ -112,9 +113,10 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                <x-responsive-nav-link :href="route('profile.edit', ['profile' => auth()->user()])">
+                    Edit Profile
                 </x-responsive-nav-link>
+                
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">

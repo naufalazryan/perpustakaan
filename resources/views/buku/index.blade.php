@@ -45,8 +45,21 @@
 
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-md sm:rounded-md p-6">
-                <div class="flex justify-between items-center">
-                    <h1 class="text-2xl font-semibold text-gray-900 dark:text-white">Daftar Buku</h1>
+                <div class="items-center">
+                    <div class="flex items-center justify-between mb-4">
+                        <h1 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Daftar Buku</h1>
+                        <div class="space-x-4 mb-4">
+                            <a href="{{ route('buku.create') }}" class="bg-blue-600  hover:bg-blue-400 transition duration-100 ease-out hover:ease-in text-white py-3 px-4 rounded-md shadow-md">Tambah Buku</a>
+                        </div>
+                    </div>
+                    <script>
+                        document.getElementById('printButton').addEventListener('click', function() {
+                          window.print();
+                        });
+                      </script>
+                      
+                   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+                  
                     @if (session('success'))
                         <div id="flash-message"
                             class="bg-green-100 border-l-4 border-green-500 text-green-700 p-2 rounded">
@@ -64,9 +77,7 @@
                             }
                         });
                     </script>
-
-
-
+                    
                 </div>
 
                 <div class="mt-4 overflow-x-auto">
@@ -95,18 +106,12 @@
                                             @method('DELETE')
                                             <button type="submit"
                                                 class="text-red-500 hover:underline dark:text-red-400">Hapus</button>
-                                        </form>
+                                        </form>                                 
                                     </td>
                                 </tr>
                             @endforeach
                         </tbody>
                     </table>
-                </div>
-
-                <div class="mt-6">
-                    <a href="{{ route('buku.create') }}"
-                        class="inline-block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md shadow-md">Tambah
-                        Buku</a>
                 </div>
             </div>
         </div>

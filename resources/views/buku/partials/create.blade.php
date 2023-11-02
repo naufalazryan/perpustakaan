@@ -19,7 +19,7 @@
                     </div>
                 @endif
                 
-                    <form method="POST" action="{{ route('buku.store') }}" class="mt-4 space-y-4">
+                    <form method="POST" action="{{ route('buku.store') }}" class="mt-4 space-y-4" enctype="multipart/form-data">
                         @csrf
 
                         <div class="space-y-2">
@@ -54,7 +54,7 @@
                         </div>
                         <div class="space-y-2">
                             <label for="tahun_penerbit" class="block text-sm font-medium text-gray-700">Tahun
-                                Penerbit</label>
+                                Terbit</label>
                             <input type="date" name="tahun_penerbit" id="tahun_penerbit"
                                 class="block w-full px-4 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                         </div>
@@ -62,6 +62,12 @@
                         <div class="space-y-2">
                             <label for="penerbit" class="block text-sm font-medium text-gray-700">Penerbit</label>
                             <input type="text" name="penerbit" id="penerbit"
+                                class="block w-full px-4 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="cover" class="block text-sm font-medium text-gray-700">Cover Buku</label>
+                            <input type="file" name="cover" id="cover"
                                 class="block w-full px-4 py-2 rounded-md border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50">
                         </div>
 

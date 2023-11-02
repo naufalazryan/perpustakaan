@@ -38,8 +38,16 @@ class BukuController extends Controller
             'pengarang' => 'required',
             'tahun_penerbit' => 'required',
             'penerbit' => 'required',
+            'cover' => 'image:mimes:jpg,png,jpeg|gif|max:2048'
         ]);
-    
+
+        $data = $request->all();
+
+
+        if($request->hasFile('cover')) {
+            $data['cover'] = $request->file('cover')->store('covers','public');
+        }
+
         try {
             Buku::create($request->all());
     

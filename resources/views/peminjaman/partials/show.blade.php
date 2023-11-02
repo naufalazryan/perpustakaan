@@ -15,12 +15,16 @@
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <p class="text-sm font-semibold text-gray-700 dark:text-gray-400">Tanggal Pinjam:</p>
-                        <p class="text-lg text-gray-900 dark:text-white">{{ $peminjaman->tanggal_pinjam }}</p>
+                        <p class="text-lg text-gray-900 dark:text-white">
+                            {{ date('d F Y', strtotime($peminjaman->tanggal_pinjam )) }}
+                        </p>
                     </div>
                     
                     <div class="col-span-2 sm:col-span-1">
                         <p class="text-sm font-semibold text-gray-700 dark:text-gray-400">Tanggal Kembali:</p>
-                        <p class="text-lg text-gray-900 dark:text-white">{{ $peminjaman->tanggal_kembali }}</p>
+                        <p class="text-lg text-gray-900 dark:text-white">
+                            {{ date('d F Y', strtotime($peminjaman->tanggal_kembali )) }}
+                        </p>
                     </div>
                     <div class="col-span-2 sm:col-span-1">
                         <p class="text-sm font-semibold text-gray-700 dark:text-gray-400">Nomor Peminjam:</p>
