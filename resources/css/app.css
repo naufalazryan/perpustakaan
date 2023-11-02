@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css */
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+    /* Add more styles for dark mode */
+}
+
+.light-mode {
+    background-color: #fff;
+    color: #333;
+    /* Add more styles for light mode */
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
